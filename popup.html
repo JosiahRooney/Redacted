@@ -1,0 +1,92 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>redactedList</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .container {
+        width: 350px;
+      }
+      .flash-messages {
+        padding-top: 4px;
+        height: 14px;
+      }
+      .flash-messages.error {
+        color:red;
+      }
+      .flash-messages.success {
+        color:#083;
+      }
+      input
+      button {
+        display: inline-block;
+        vertical-align: top;
+      }
+      input {
+        width: 70%;
+      }
+      button {
+        width: 24%;
+        border: 0;
+        border-radius: 4px;
+        color: rgba(255,255,255,0.9);
+        background-color: #07c;
+        border-color: #005999;
+        box-shadow: inset 0 1px 0 #3af;
+        padding: 4px 10px;
+        cursor: pointer;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        padding-right: 20px;
+        position: relative;
+        font-size: 20px;
+      }
+      .delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        font-size: 30px;
+        line-height: 15px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Redacted</h1>
+
+    <p>Filter out the noise on the internet using this tool! Enter terms below that annoy you.</p>
+    <p>Tip: this form accepts regular expression, so you can get fancy with your filters!</p>
+
+    <!-- Form to add words -->
+    <div class="container">
+      <input id="filter" type="text" name="wordFilter" placeholder="Enter a word to filter">
+      <button id="saver">Save</button>
+    </div>
+    
+    <div class="flash-messages"></div>
+
+    
+    <!-- List of words -->
+
+    <h3>Filtered terms:</h3>
+
+    <ul class="filtered-terms">
+    </ul>
+
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
