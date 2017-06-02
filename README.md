@@ -6,3 +6,4 @@ The plugin is a bit slow for now as it must loop through every node in the page.
 ### Known Bugs:
 
 * If you add a word the page refreshes, and adding a new word after page refresh will not cause a subsequent refresh.
+* Plugin doesn't work for content loaded after initial page load.
